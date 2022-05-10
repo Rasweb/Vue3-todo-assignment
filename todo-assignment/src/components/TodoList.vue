@@ -38,9 +38,6 @@ export default class TodoList extends Vue {
   handleDelete(index: number) {
     this.todos.splice(index, 1);
   }
-
-  // mounted() {
-  // }
 }
 </script>
 
