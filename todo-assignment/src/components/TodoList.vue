@@ -4,6 +4,7 @@
     <TodoItem v-for="todo in todos" :key="todo.id" :todos="todo" />
     <div>
       <TodoDelete @todoDelete="handleDelete($event)" />
+      <TodoAdd @todoAdd="handleAdd($event)" />
     </div>
   </div>
 </template>
@@ -13,12 +14,14 @@ import { Options, Vue } from "vue-class-component";
 import { Todo } from "@/models/Todo";
 import TodoItem from "./todo/TodoItem.vue";
 import TodoDelete from "./todo/Buttons/TodoDelete.vue";
+import TodoAdd from "./todo/Buttons/TodoAdd.vue";
 
 @Options({
   props: {},
   components: {
     TodoItem,
     TodoDelete,
+    TodoAdd,
   },
 })
 export default class TodoList extends Vue {
@@ -27,6 +30,10 @@ export default class TodoList extends Vue {
     new Todo("Eat breakfast", 2),
     new Todo("Brush teeth", 3),
   ];
+
+  handleAdd(t: Todo) {
+    this.todos.push(t);
+  }
 
   handleDelete(index: number) {
     this.todos.splice(index, 1);
