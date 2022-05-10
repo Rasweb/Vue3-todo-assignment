@@ -1,5 +1,9 @@
 <template>
-  <div><TodoList /></div>
+  <div>
+    <h1>To do list assignment</h1>
+    <div><TodoList /></div>
+    <footer>Created by Rasmus</footer>
+  </div>
 </template>
 
 <script lang="ts">
@@ -15,12 +19,14 @@ export default class App extends Vue {}
 </script>
 
 <style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2c3e50;
+  color: rgba(255, 255, 255, 0.827);
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

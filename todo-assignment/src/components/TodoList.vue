@@ -1,7 +1,7 @@
 <template>
   <div>
+    <h2>To Do</h2>
     <TodoItem :todos="todos" />
-    <div></div>
   </div>
 </template>
 
