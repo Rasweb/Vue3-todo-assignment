@@ -1,8 +1,8 @@
 <template>
   <div>
-    <li v-for="todo in todos" :key="todo.id">
-      <h2>{{ todo.title }}</h2>
-      <p>{{ todo.id }}</p>
+    <li>
+      <h2>{{ todos.title }}</h2>
+      <p>{{ todos.id }}</p>
     </li>
   </div>
 </template>
@@ -15,6 +15,7 @@ import { Options, Vue } from "vue-class-component";
   props: {
     todos: Todo,
   },
+  components: {},
 })
 export default class TodoItem extends Vue {
   todos!: Todo;
