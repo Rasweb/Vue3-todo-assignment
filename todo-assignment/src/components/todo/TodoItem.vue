@@ -24,12 +24,16 @@ export default class TodoItem extends Vue {
   todos!: Todo;
 
   mounted() {
+    for (let i = 0; i < this.todos.length; i++) {
+      console.log(i, this.todos.length);
+    }
     //console.log(this.todos);
-    console.log(this.todos.id, this.todos.index);
+    // console.log(this.todos.id, this.todos.index);
   }
 
   handleDelete(t: Todo) {
     this.todos.splice(this.todos.indexOf(t), 1);
+
     //this.todos.splice(index, 1);
     // this.todos = this.todos.filter((e: Todo) => e.id !== id);
     // for (let i = 0; i < todo.length; i++) {}
