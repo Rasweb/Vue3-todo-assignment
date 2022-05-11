@@ -1,9 +1,14 @@
 <template>
   <div>
     <h2>To Do</h2>
-    <TodoItem v-for="todo in todos" :key="todo.id" :todos="todo" />
+    <TodoItem
+      v-for="todo in todos"
+      :todos="todo"
+      :key="todo.id"
+      :title="todo.title"
+    />
     <div>
-      <TodoDelete @todoDelete="handleDelete($event)" />
+      <!-- <TodoDelete @todoDelete="handleDelete($event)" /> -->
       <TodoAdd @todoAdd="handleAdd($event)" />
     </div>
   </div>
@@ -35,9 +40,9 @@ export default class TodoList extends Vue {
     this.todos.push(t);
   }
 
-  handleDelete(index: number) {
-    this.todos.splice(index, 1);
-  }
+  // handleDelete(index: number) {
+  //   this.todos.splice(index, 1);
+  // }
 }
 </script>
 
