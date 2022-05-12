@@ -6,6 +6,11 @@
       :todos="todo"
       :key="todo.id"
       :title="todo.title"
+      @click="
+        () => {
+          handleRem($event);
+        }
+      "
     />
     <div>
       <TodoAdd @todoAdd="handleAdd($event)" />
@@ -35,6 +40,11 @@ export default class TodoList extends Vue {
 
   handleAdd(t: Todo) {
     this.todos.push(t);
+  }
+
+  handleRem(index: number) {
+    this.todos.splice(index, 1);
+    //this.todos.splice(this.todos.indexOf(t), 1);
   }
 }
 </script>

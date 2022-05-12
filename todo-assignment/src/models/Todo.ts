@@ -1,5 +1,6 @@
 export class Todo {
-  splice: any;
-  [x: string]: any;
-  constructor(public title: string, public id: number) {}
+  done: boolean;
+  constructor(public title: string, public id: number) {
+    this.done = false;
+  }
 }
