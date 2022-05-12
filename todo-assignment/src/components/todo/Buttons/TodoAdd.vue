@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="addCont">
     <input type="text" placeholder="Title" v-model="itemTitle" />
     <input type="number" placeholder="id" v-model="itemId" />
     <button
@@ -31,4 +31,22 @@ export default class TodoAdd extends Vue {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+@import "/src/sass/mixins.scss";
+
+.addCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid lightgrey;
+  input {
+    margin: 4px;
+    font-size: 16px;
+    width: 50%;
+    height: 10%;
+  }
+  button {
+    @include buttonDesign();
+  }
+}
+</style>

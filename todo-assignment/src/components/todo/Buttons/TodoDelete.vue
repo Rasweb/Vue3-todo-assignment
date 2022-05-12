@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="deleteCont">
     <button
       @click="
         () => {
@@ -22,4 +22,12 @@ export default class TodoDelete extends Vue {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "/src/sass/mixins.scss";
+.deleteCont {
+  button {
+    @include buttonDesign();
+    padding: 8px 24px;
+  }
+}
+</style>

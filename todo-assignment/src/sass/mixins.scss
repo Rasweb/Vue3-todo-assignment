@@ -1,0 +1,15 @@
+@mixin buttonDesign {
+  border: none;
+  background-color: white;
+  text-align: center;
+  font-size: 14px;
+  margin: 4px;
+  padding: 8px 30px;
+  cursor: pointer;
+}
+
+@mixin desktop() {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}

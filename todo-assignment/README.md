@@ -29,3 +29,5 @@ npm run lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+[Sass problem fixed](https://stackoverflow.com/a/68316527)

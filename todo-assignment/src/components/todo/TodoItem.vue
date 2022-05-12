@@ -1,10 +1,10 @@
 <template>
-  <li>
+  <li class="oneTodoCont">
     <h2>{{ todos.title }}</h2>
     <p>{{ todos.id }}</p>
     <p>{{ todos.done }}</p>
     <TodoDelete @todoDelete="handleDelete()" />
-    <input type="checkbox" :checked="todos.done" @click="todoDone" />
+    <button @click="todoDone">Done</button>
   </li>
 </template>
 
@@ -34,4 +34,15 @@ export default class TodoItem extends Vue {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "/src/sass/mixins.scss";
+.oneTodoCont {
+  list-style: none;
+  border-top: 1px solid lightgrey;
+  margin: 5%;
+
+  button {
+    @include buttonDesign;
+  }
+}
+</style>
