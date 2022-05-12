@@ -38,18 +38,13 @@ export default class TodoList extends Vue {
     this.todos.push(t);
   }
 
-  handleRem(todoItem: Todo) {
+  handleRem(t: Todo) {
     for (let i = 0; i < this.todos.length; i++) {
-      if (this.todos[i].id === todoItem.id) {
+      if (this.todos[i].id === t.id) {
         this.todos.splice(i, 1);
       }
     }
   }
-
-  // handleRem(index: number) {
-  //   this.todos.splice(index, 1);
-  //   //this.todos.splice(this.todos.indexOf(t), 1);
-  // }
 }
 </script>
 

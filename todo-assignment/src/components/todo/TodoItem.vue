@@ -4,7 +4,7 @@
     <p>{{ todos.id }}</p>
     <p>{{ todos.done }}</p>
     <TodoDelete @todoDelete="handleDelete()" />
-    <TodoDone />
+    <input type="checkbox" :checked="todos.done" @click="todoDone" />
   </li>
 </template>
 
@@ -23,6 +23,10 @@ import TodoDelete from "./Buttons/TodoDelete.vue";
 })
 export default class TodoItem extends Vue {
   todos!: Todo;
+
+  todoDone() {
+    this.todos.done = !this.todos.done;
+  }
 
   handleDelete() {
     this.$emit("todoDelete", this.todos);
