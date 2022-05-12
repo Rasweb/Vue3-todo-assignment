@@ -2,15 +2,11 @@
   <div>
     <h2>To Do</h2>
     <TodoItem
+      @todoDelete="handleRem($event)"
       v-for="todo in todos"
       :todos="todo"
       :key="todo.id"
       :title="todo.title"
-      @click="
-        () => {
-          handleRem($event);
-        }
-      "
     />
     <div>
       <TodoAdd @todoAdd="handleAdd($event)" />
@@ -42,10 +38,18 @@ export default class TodoList extends Vue {
     this.todos.push(t);
   }
 
-  handleRem(index: number) {
-    this.todos.splice(index, 1);
-    //this.todos.splice(this.todos.indexOf(t), 1);
+  handleRem(todoItem: Todo) {
+    for (let i = 0; i < this.todos.length; i++) {
+      if (this.todos[i].id === todoItem.id) {
+        this.todos.splice(i, 1);
+      }
+    }
   }
+
+  // handleRem(index: number) {
+  //   this.todos.splice(index, 1);
+  //   //this.todos.splice(this.todos.indexOf(t), 1);
+  // }
 }
 </script>
 

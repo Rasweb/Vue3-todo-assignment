@@ -2,7 +2,9 @@
   <li>
     <h2>{{ todos.title }}</h2>
     <p>{{ todos.id }}</p>
-    <TodoDelete />
+    <p>{{ todos.done }}</p>
+    <TodoDelete @todoDelete="handleDelete()" />
+    <TodoDone />
   </li>
 </template>
 
@@ -21,6 +23,10 @@ import TodoDelete from "./Buttons/TodoDelete.vue";
 })
 export default class TodoItem extends Vue {
   todos!: Todo;
+
+  handleDelete() {
+    this.$emit("todoDelete", this.todos);
+  }
 }
 </script>
 
