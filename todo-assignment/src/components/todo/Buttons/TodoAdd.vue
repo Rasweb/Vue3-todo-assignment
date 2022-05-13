@@ -43,6 +43,9 @@ export default class TodoAdd extends Vue {
   @include ipad() {
     margin: 4%;
   }
+  @include desktop() {
+    margin: 2%;
+  }
   input {
     margin: 4px;
     font-size: 16px;

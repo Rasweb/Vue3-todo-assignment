@@ -50,6 +50,9 @@ export default class TodoItem extends Vue {
   @include ipad() {
     margin: 4%;
   }
+  @include desktop() {
+    margin: 2%;
+  }
 
   p {
     font-size: $desktop-font;

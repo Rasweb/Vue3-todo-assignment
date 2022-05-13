@@ -1,6 +1,32 @@
 <template>
   <div class="listCont">
     <h2>To Do</h2>
+    <button
+      class="sort"
+      @click="
+        () => {
+          todoSort();
+          isActive = false;
+          hideBtn = true;
+        }
+      "
+      :class="[{ hideShow: hideBtn }]"
+    >
+      Sort
+    </button>
+    <button
+      class="sort"
+      @click="
+        () => {
+          todoUnsort();
+          isActive = !isActive;
+          hideBtn = !hideBtn;
+        }
+      "
+      :class="[{ unhide: isActive }]"
+    >
+      Unsort
+    </button>
     <TodoItem
       @todoDelete="handleRem($event)"
       v-for="todo in todos"
@@ -10,30 +36,6 @@
     />
     <div>
       <TodoAdd @todoAdd="handleAdd($event)" />
-      <button
-        @click="
-          () => {
-            todoSort();
-            isActive = false;
-            hideBtn = true;
-          }
-        "
-        :class="[{ hideShow: hideBtn }]"
-      >
-        Sort
-      </button>
-      <button
-        @click="
-          () => {
-            todoUnsort();
-            isActive = !isActive;
-            hideBtn = !hideBtn;
-          }
-        "
-        :class="[{ unhide: isActive }]"
-      >
-        Unsort
-      </button>
     </div>
   </div>
 </template>
@@ -87,7 +89,13 @@ export default class TodoList extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import "/src/sass/mixins.scss";
+@import "/src/sass/variables.scss";
+
 .listCont {
+  .sort {
+    @include buttonDesign();
+  }
   .hideShow {
     display: none;
   }
