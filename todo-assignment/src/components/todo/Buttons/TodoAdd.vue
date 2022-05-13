@@ -33,20 +33,31 @@ export default class TodoAdd extends Vue {
 
 <style lang="scss">
 @import "/src/sass/mixins.scss";
+@import "/src/sass/variables.scss";
 
 .addCont {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 5%;
+  @include ipad() {
+    margin: 4%;
+  }
   input {
     margin: 4px;
     font-size: 16px;
     height: 10%;
     padding: 8px 20px;
+    @include desktop() {
+      padding: 10px 35px;
+      font-size: 18px;
+    }
   }
   button {
     @include buttonDesign();
+    @include desktop() {
+      padding: 10px 4%;
+    }
   }
 }
 </style>

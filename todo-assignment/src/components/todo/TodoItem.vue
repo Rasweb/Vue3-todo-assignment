@@ -36,6 +36,8 @@ export default class TodoItem extends Vue {
 
 <style lang="scss" scoped>
 @import "/src/sass/mixins.scss";
+@import "/src/sass/variables.scss";
+
 .done {
   text-decoration: line-through;
   color: black;
@@ -45,7 +47,13 @@ export default class TodoItem extends Vue {
   list-style: none;
   border-bottom: 1px solid lightgrey;
   margin: 5%;
+  @include ipad() {
+    margin: 4%;
+  }
 
+  p {
+    font-size: $desktop-font;
+  }
   button {
     @include buttonDesign;
   }

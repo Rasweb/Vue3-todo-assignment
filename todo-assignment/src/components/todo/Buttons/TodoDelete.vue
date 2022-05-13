@@ -24,6 +24,8 @@ export default class TodoDelete extends Vue {
 
 <style lang="scss" scoped>
 @import "/src/sass/mixins.scss";
+@import "/src/sass/variables.scss";
+
 .deleteCont {
   button {
     @include buttonDesign();

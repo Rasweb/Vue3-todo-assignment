@@ -1,3 +1,5 @@
+@use "variables";
+
 @mixin buttonDesign {
   border: none;
   background-color: white;
@@ -6,6 +8,18 @@
   margin: 4px;
   padding: 8px 30px;
   cursor: pointer;
+  @include ipad() {
+    font-size: $ipad-font;
+  }
+  @include desktop() {
+    font-size: $desktop-font;
+  }
+}
+
+@mixin ipad() {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
 }
 
 @mixin desktop() {
