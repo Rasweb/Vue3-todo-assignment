@@ -1,7 +1,7 @@
 ## Table of contents
 
 - [Overview](#overview)
-  - [project name](#project-name)
+  - [project name](#todo-assignment)
   - [Project setup](#project-setup)
   - [Built with](#built-with)
   - [Screenshot](#screenshot)
