@@ -10,8 +10,30 @@
     />
     <div>
       <TodoAdd @todoAdd="handleAdd($event)" />
-      <button @click="todoSort">Sort by title</button>
-      <button @click="todoUnsort">unsort</button>
+      <button
+        @click="
+          () => {
+            todoSort();
+            isActive = false;
+            hideBtn = true;
+          }
+        "
+        :class="[{ hideShow: hideBtn }]"
+      >
+        Sort
+      </button>
+      <button
+        @click="
+          () => {
+            todoUnsort();
+            isActive = !isActive;
+            hideBtn = !hideBtn;
+          }
+        "
+        :class="[{ unhide: isActive }]"
+      >
+        Unsort
+      </button>
     </div>
   </div>
 </template>
@@ -34,6 +56,9 @@ export default class TodoList extends Vue {
     new Todo("Eat breakfast", 2),
     new Todo("Brush teeth", 3),
   ];
+
+  isActive = true;
+  hideBtn = false;
 
   todoSort() {
     let oldSort = this.todos;
@@ -63,6 +88,12 @@ export default class TodoList extends Vue {
 
 <style lang="scss" scoped>
 .listCont {
+  .hideShow {
+    display: none;
+  }
+  .unhide {
+    display: none;
+  }
   h2 {
     border-bottom: 1px solid lightgrey;
   }
