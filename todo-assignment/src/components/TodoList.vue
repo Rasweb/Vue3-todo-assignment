@@ -10,6 +10,7 @@
     />
     <div>
       <TodoAdd @todoAdd="handleAdd($event)" />
+      <button @click="todoSort">Sort by title</button>
     </div>
   </div>
 </template>
@@ -32,6 +33,12 @@ export default class TodoList extends Vue {
     new Todo("Eat breakfast", 2),
     new Todo("Brush teeth", 3),
   ];
+
+  todoSort() {
+    let oldSort = this.todos;
+    let newSort = oldSort.sort((a, b) => (a.title > b.title ? 1 : -1));
+    console.log("New: ", newSort);
+  }
 
   handleAdd(t: Todo) {
     this.todos.push(t);
