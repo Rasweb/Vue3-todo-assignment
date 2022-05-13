@@ -38,12 +38,12 @@ export default class TodoAdd extends Vue {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid lightgrey;
+  margin: 5%;
   input {
     margin: 4px;
     font-size: 16px;
-    width: 50%;
     height: 10%;
+    padding: 8px 20px;
   }
   button {
     @include buttonDesign();

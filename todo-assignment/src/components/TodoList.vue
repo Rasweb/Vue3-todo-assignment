@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="listCont">
     <h2>To Do</h2>
     <TodoItem
       @todoDelete="handleRem($event)"
@@ -21,7 +21,6 @@ import TodoItem from "./todo/TodoItem.vue";
 import TodoAdd from "./todo/Buttons/TodoAdd.vue";
 
 @Options({
-  props: {},
   components: {
     TodoItem,
     TodoAdd,
@@ -48,4 +47,10 @@ export default class TodoList extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.listCont {
+  h2 {
+    border-bottom: 1px solid lightgrey;
+  }
+}
+</style>

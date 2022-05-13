@@ -1,8 +1,8 @@
 <template>
-  <li class="oneTodoCont">
+  <li class="oneTodoCont" :class="[{ done: todos.done }]">
     <h2>{{ todos.title }}</h2>
     <p>{{ todos.id }}</p>
-    <p>{{ todos.done }}</p>
+    <p>Done: {{ todos.done }}</p>
     <TodoDelete @todoDelete="handleDelete()" />
     <button @click="todoDone">Done</button>
   </li>
@@ -36,9 +36,14 @@ export default class TodoItem extends Vue {
 
 <style lang="scss" scoped>
 @import "/src/sass/mixins.scss";
+.done {
+  text-decoration: line-through;
+  color: black;
+}
+
 .oneTodoCont {
   list-style: none;
-  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
   margin: 5%;
 
   button {
