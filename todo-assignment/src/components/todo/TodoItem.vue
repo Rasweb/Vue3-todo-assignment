@@ -1,6 +1,7 @@
 <template>
   <li class="oneTodoCont" :class="[{ done: todos.done }]">
     <h2>{{ todos.title }}</h2>
+    <p>Todo nr: {{ todos.id }}</p>
     <p>Done: {{ todos.done }}</p>
     <TodoDelete @todoDelete="handleDelete()" />
     <button @click="todoDone">Done</button>
