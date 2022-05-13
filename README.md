@@ -50,7 +50,7 @@ npm run lint
 
 ### Screenshot
 
-![Mobile screenshot](./src/assets/Screenshot.png)
+![Mobile screenshot](./todo-assignment/src/assets/Screenshot.png)
 
 ### Author
 
