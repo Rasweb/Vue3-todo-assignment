@@ -58,8 +58,6 @@ Rasmus
 
 [Github](https://github.com/Rasweb)
 
-[Website](https://rasweb.one/)
-
 ### Customize configuration
 
 [Sass problem fixed](https://stackoverflow.com/a/68316527)
